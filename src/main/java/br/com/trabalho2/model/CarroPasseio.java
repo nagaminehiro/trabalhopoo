@@ -6,11 +6,11 @@ import br.com.trabalho2.util.TipoVeiculo;
 
 @TipoVeiculo("Carro Passeio")
 public class CarroPasseio extends VeiculoMotorizado implements IPVA {
-
+    public double ctePasseio = 1.3;
+    public double gastoPasseio = 0.75;
     @Override
     public double calcularIPVA() {
-        super.
-        return 0;
+        return ctePasseio*super.valorBase;
     }
 
     @Override

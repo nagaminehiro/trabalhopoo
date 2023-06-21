@@ -32,12 +32,7 @@ public class Main {
                     System.out.println("== Remover Veículo ==");
                     System.out.print("Informe o ID do veículo a ser removido: ");
                     int idVeiculo = scanner.nextInt();
-
-//                    Veiculo veiculo = simulador.procuraVeiculo(idVeiculo);
-//
-//                    if (veiculo != null) {
-//                        simulador.removerVeiculo(veiculo);
-//                    }
+                    simulador.removerVeiculo(idVeiculo);
                     break;
                 }
 

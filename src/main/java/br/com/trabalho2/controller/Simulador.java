@@ -1,12 +1,16 @@
 package br.com.trabalho2.controller;
 
-import br.com.trabalho1.veiculo.Veiculo;
-import br.com.trabalho2.util.TipoVeiculos;
+
+import br.com.trabalho2.common.Veiculo;
+import br.com.trabalho2.common.VeiculoMotorizado;
+import br.com.trabalho2.controller.veiculocontroller.IncluirVeiculoController;
+import br.com.trabalho2.controller.veiculocontroller.RemoverVeiculoController;
+import br.com.trabalho2.model.Esportivo;
+
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
-import java.util.Scanner;
+
 
 public class Simulador {
 
@@ -14,31 +18,15 @@ public class Simulador {
 
 
     public void incluirVeiculo() {
-        Scanner scanner = new Scanner(System.in);
-        if(veiculos.size() < 20){
-            Random random = new Random();
-            int id = random.nextInt(1000);
-            boolean ipvaPago = random.nextBoolean();
-            boolean pneuCalibrado = random.nextBoolean();
-
-            System.out.println("Informe o tipo do veiculo: EX: " + TipoVeiculos.listTipoVeiculo());
-            var ret = scanner.next();
-            do{
-                if(!TipoVeiculos.verifyValidValue(ret)){
-                    System.out.println("Veiculo inválido selecione: EX: " + TipoVeiculos.listTipoVeiculo());
-                    ret = scanner.next();
-                }
-            }while (!TipoVeiculos.verifyValidValue(ret));
-
-            if(ipvaPago){
-
-            }
-
-            if(pneuCalibrado){
-
-            }
-
-        }
+        IncluirVeiculoController.incluirVeiculo(veiculos);
     }
 
+    public void removerVeiculo(int id){
+        try{
+            RemoverVeiculoController.removeVeiculo(veiculos, id);
+        }catch (Exception ex){
+            System.out.println(ex.getMessage());
+        }
+
+    }
 }
