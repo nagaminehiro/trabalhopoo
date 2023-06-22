@@ -8,14 +8,10 @@ import br.com.trabalho2.util.VeiculoMapper;
 @TipoVeiculo("Carro Passeio")
 public class CarroPasseio extends VeiculoMotorizado implements IPVA {
 
-    public double ctePasseio = 1.3;
-    public double gastoPasseio = 0.75;
+
+
     public int cteBlP = 5;
 
-    @Override
-    public double calcularIPVA() {
-        return ctePasseio*super.valorBase;
-    }
 
     @Override
     public void mover() {
@@ -32,8 +28,8 @@ public class CarroPasseio extends VeiculoMotorizado implements IPVA {
         return "CarroPasseio { " +
                     "id: " + super.getId() + ", " +
                     "ctePasseio: " + ctePasseio + ", " +
-                    "gastoPasseio:" + gastoPasseio + ", " +
-                    "combustivel: " + super.combustivel + ", " +
+                    "gastoPasseio:" + super.getGastoPasseio() + ", " +
+                    "combustivel: " + super.getCombustivel() + ", " +
                     "pneus: " + super.getQuantidadePneus() + ", " +
                     "distanciaPercorrida: " + super.getDistanciaPercorrida() +  ", " +
                     "getPneus: " + VeiculoMapper.printPneus(super.getPneus()) +

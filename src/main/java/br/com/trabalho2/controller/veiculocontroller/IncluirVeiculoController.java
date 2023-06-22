@@ -39,7 +39,7 @@ public class IncluirVeiculoController {
                 veiculo.setId(id);
                 veiculo.setQuantidadePneus((veiculo instanceof Motocicleta ? 2 : 4));
                 veiculo.setPneus(setPneus(retIdentificacaoPneu(ret),pneuCalibrado));
-                veiculo.combustivel = 2.25;
+                veiculo.setCombustivel(2.25);
                 veiculoList.add(veiculo);
             }
         }
