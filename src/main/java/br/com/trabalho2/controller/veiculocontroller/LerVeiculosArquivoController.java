@@ -11,17 +11,14 @@ import java.util.List;
 public class LerVeiculosArquivoController {
 
     public static List<Veiculo> lerVeiculosArquivo() throws Exception{
-        List<Veiculo> veiculosArq = null;
         File arquivo = new File("veiculo.dat");
         FileInputStream fin = new FileInputStream(arquivo);
         ObjectInputStream oin = new ObjectInputStream(fin);
 
-        veiculosArq = (List<Veiculo>) oin.readObject();
+        var veiculosArq = oin.readObject();
         oin.close();
         fin.close();
-        for (Veiculo veiculo: veiculosArq) {
-             System.out.println(veiculo);
-        }
-        return veiculosArq;
+        System.out.println(veiculosArq);
+        return null;
     }
 }
