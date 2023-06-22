@@ -3,6 +3,7 @@ package br.com.trabalho2.model;
 import br.com.trabalho2.common.IPVA;
 import br.com.trabalho2.common.VeiculoMotorizado;
 import br.com.trabalho2.util.TipoVeiculo;
+import br.com.trabalho2.util.VeiculoMapper;
 
 @TipoVeiculo("Motocicleta")
 public class Motocicleta extends VeiculoMotorizado implements IPVA {
@@ -28,10 +29,14 @@ public class Motocicleta extends VeiculoMotorizado implements IPVA {
     @Override
     public String toString() {
         return "Motocicleta {" +
-                    "cteMotocicleta: " + cteMotocicleta + "," +
-                    "gastoMotocicleta: " + gastoMotocicleta + "," +
-                    "combustivel: " + super.combustivel +
-                '}';
+                    "id: " + super.getId() + ", " +
+                    "cteMotocicleta: " + cteMotocicleta + ", " +
+                    "gastoMotocicleta: " + gastoMotocicleta + ", " +
+                    "combustivel: " + super.combustivel + ", " +
+                    "pneus: " + super.getQuantidadePneus() + ", " +
+                    "distanciaPercorrida: " + super.getDistanciaPercorrida() +  ", " +
+                    "getPneus: " + VeiculoMapper.printPneus(super.getPneus()) +
+                " }";
     }
 
 }

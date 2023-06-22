@@ -14,7 +14,7 @@ public class AbastecerVeiculoController {
 
 
         // busco o veiculo na lista pelo ID
-        var veiculo = veiculoList.stream().filter(item -> VeiculoMapper.veiculoMapper(item).getId() == id);
+        var veiculo = veiculoList.stream().filter(item -> VeiculoMapper.veiculoMapper(item).getId() == id).findFirst().orElse(null);
 
         // valido se existe o veiculo
         Validations.validateExists(veiculo);

@@ -2,11 +2,13 @@ package br.com.trabalho2.common;
 
 import br.com.trabalho2.model.Pneu;
 
+import java.util.List;
+
 public abstract class Veiculo {
 
     int id;
     int distanciaPercorrida;
-    Pneu[] pneus;
+    List<Pneu> pneus;
     int quantidadePneus;
     public double valorBase = 500.00;
 
@@ -32,11 +34,11 @@ public abstract class Veiculo {
         this.distanciaPercorrida = distanciaPercorrida;
     }
 
-    public Pneu[] getPneus() {
+    public List<Pneu> getPneus() {
         return pneus;
     }
 
-    public void setPneus(Pneu[] pneus) {
+    public void setPneus(List<Pneu> pneus) {
         this.pneus = pneus;
     }
 

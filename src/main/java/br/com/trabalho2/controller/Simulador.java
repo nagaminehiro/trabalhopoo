@@ -1,11 +1,6 @@
 package br.com.trabalho2.controller;
 
-import br.com.trabalho2.common.Veiculo;
-import br.com.trabalho2.controller.veiculocontroller.AbastecerVeiculoController;
-import br.com.trabalho2.controller.veiculocontroller.ImprimirVeiculoController;
-import br.com.trabalho2.controller.veiculocontroller.IncluirVeiculoController;
-import br.com.trabalho2.controller.veiculocontroller.RemoverVeiculoController;
-import br.com.trabalho2.model.CarroPasseio;
+import br.com.trabalho2.controller.veiculocontroller.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,4 +46,29 @@ public class Simulador {
             System.out.println(ex.getMessage());
         }
     }
+
+    public void calibrarEsvaziarPneuEspecifico(int id){
+        try{
+            PneusController.calibrarPneu(veiculos, id);
+        }catch (Exception ex){
+            System.out.println(ex.getMessage());
+        }
+    }
+
+    public void calibrarEsvaziarTodos(String className){
+        try{
+            PneusController.calibrarAllPneu(veiculos, className);
+        }catch (Exception ex){
+            System.out.println(ex.getMessage());
+        }
+    }
+    public void gravarVeiculosArquivo(){
+        try{
+            GravarVeiculosArquivoController.gravarVeiculosArquivo(veiculos);
+        }catch (Exception ex){
+            System.out.println(ex.getMessage());
+        }
+
+    }
+
 }

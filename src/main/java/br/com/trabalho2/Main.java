@@ -3,6 +3,7 @@ package br.com.trabalho2;
 
 
 import br.com.trabalho2.controller.Simulador;
+import br.com.trabalho2.util.CommonVeiculos;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -24,6 +25,7 @@ public class Main {
             switch (opcao) {
                 case 1: {
                     // Adicionar o veículo ao simulador
+                    System.out.println("== Incluir Veículo ==");
                     simulador.incluirVeiculo(); // OK
                     break;
                 }
@@ -40,13 +42,13 @@ public class Main {
                     System.out.println("== Abastecer Veículo ==");
                     System.out.print("Informe o ID do veículo a ser abastecido: ");
                     int idVeiculo = scanner.nextInt();
-                    simulador.abastecerVeiculo(idVeiculo);// OK
+                    simulador.abastecerVeiculo(idVeiculo); // OK
                     break;
                 }
 
                 case 4: {
-                    // Movimentar um veículo do simulador
-                    System.out.println("== Movimentar Veículo ==");
+                    // Movimentar um veículo específico
+                    System.out.println("== Movimentar Veículo Específico ==");
                     System.out.print("Informe o ID do veículo a ser movimentado: ");
                     int idVeiculo = scanner.nextInt();
 
@@ -54,77 +56,69 @@ public class Main {
                 }
 
                 case 5: {
-                    // Movimentar todos os veículos do simulador
+                    // Movimentar veículos por tipo
+                    System.out.println("== Movimentar Veículos por tipo ==");
+                    //simulador.movimentarTodosVeiculos();
+                    break;
+                }
+                case 6: {// Movimentar todos os veículos
                     System.out.println("== Movimentar Todos os Veículos ==");
                     //simulador.movimentarTodosVeiculos();
                     break;
                 }
-                case 6: {   // Imprimir os dados de um veículo específico
-                    System.out.println("== Imprimir Dados de um Veículo ==");
+
+                case 7: {   // imprimir todos os dados de todos os veículos
+                    System.out.println("== Imprimir Todos os dados de todos os Veículos ==");
+                    simulador.imprimirVeiculos();
+                    break;
+                }
+                case 8: {   // imprimir dados de veículos por tipo
+                    System.out.println("== Imprimir Dados de Veículos por tipo ==");
                     System.out.print("Informe o ID do veículo: ");
                     int idVeiculo = scanner.nextInt();
                     simulador.imprimirVeiculo(idVeiculo);
                     break;
                 }
-                case 7: {
+                case 9: {
                     // Esvaziar ou calibrar um pneu específico de um veículo
                     System.out.println("== Esvaziar ou Calibrar Pneu Específico ==");
                     System.out.print("Informe o ID do veículo: ");
                     int idVeiculo = scanner.nextInt();
-
-//                    Veiculo veiculo = simulador.procuraVeiculo(idVeiculo);
-//
-//                    if (veiculo != null) {
-//                        System.out.print("Informe a ação a ser realizada (esvaziar/calibrar): ");
-//                        String acao = scanner.next();
-//                        System.out.print("Informe o número do pneu: ");
-//                        int numeroPneu = scanner.nextInt();
-//
-//                        if (veiculo.getPneus().length <= numeroPneu || numeroPneu<0) {
-//                            System.out.println("Pneu não existe");
-//                        } else {
-//                            simulador.esvaziarOuCalibrarPneu(veiculo, acao, numeroPneu);
-//                        }
-//                    }
+                    simulador.calibrarEsvaziarPneuEspecifico(idVeiculo);
                     break;
                 }
-                case 8: {
-                    // Esvaziar ou calibrar todos os pneus de um veículo
-                    System.out.println("== Esvaziar ou Calibrar Todos os Pneus de um Veículo ==");
-                    System.out.print("Informe o ID do veículo: ");
-                    int idVeiculo = scanner.nextInt();
+                case 10: {// calibrar todos os pneus de veículos por tipo
+                    System.out.println("== Calibrar ou Calibrar todos os Pneus de Veículos por Tipo ==");
+                    System.out.println("Informe o tipo do veiculo: EX: " + CommonVeiculos.listTipoVeiculo());
+                    var ret = scanner.next();
+                    do{
+                        if(!CommonVeiculos.verifyValidValue(ret)){
+                            System.out.println("Veiculo inválido selecione: EX: " + CommonVeiculos.listTipoVeiculo());
+                            ret = scanner.next();
+                        }
+                    }while (!CommonVeiculos.verifyValidValue(ret));
 
-//                    Veiculo veiculo = simulador.procuraVeiculo(idVeiculo);
-//
-//                    if (veiculo != null) {
-//                        System.out.print("Informe a ação a ser realizada (esvaziar/calibrar): ");
-//                        String acaoTodos = scanner.next();
-//                        simulador.esvaziarCalibrarTodosPneus(veiculo, acaoTodos);
-//                    }
+
+                    simulador.calibrarEsvaziarTodos(CommonVeiculos.getClassName(ret));
                     break;
                 }
-                case 9: {
+                case 11: {
                     // Imprimir a pista de corrida do simulador
                     System.out.println("== Imprimir Pista de Corrida ==");
                     //simulador.imprimirPistaCorrida();
                     break;
                 }
-                case 10: {   // Imprimir os dados de todos os veículos no simulador
-                    System.out.println("== Imprimir Veículos ==");
-                    simulador.imprimirVeiculos();
-                    break;
-                }
-                case 11: {   // Imprimir os dados de todos os veículos no simulador
+                case 12: {   // Gravar veículos em arquivo
                     System.out.println("== Gravar Veículos em Arquivo ==");
-                    //simulador.gravarVeiculosArquivo(simulador.getVeiculos());
+                    simulador.gravarVeiculosArquivo();
                     break;
                 }
-                case 12: {   // Imprimir os dados de todos os veículos no simulador
+                case 13: {   // Ler veículos de arquivo
                     System.out.println("== Ler Veículos de Arquivo ==");
                     //simulador.lerVeiculosArquivo();
                     break;
                 }
-                case 13: {   // Encerrar o programa
+                case 14: {   // Encerrar o programa
                     System.out.println("Encerrando o programa...");
                     break;
                 }
@@ -132,7 +126,7 @@ public class Main {
                     System.out.println("Opção inválida. Por favor, escolha uma opção válida.");
                 }
             }
-        } while (opcao != 0);
+        } while (opcao != 15);
 
         // Encerrando o programa
         System.out.println("Encerrando o programa...");
@@ -144,16 +138,18 @@ public class Main {
         System.out.println("1. Incluir Veículo");
         System.out.println("2. Remover Veículo");
         System.out.println("3. Abastecer Veículo");
-        System.out.println("4. Movimentar Veículo");
-        System.out.println("5. Movimentar Todos os Veículos");
-        System.out.println("6. Imprimir Dados de um Veículo");
-        System.out.println("7. Esvaziar ou Calibrar Pneu Específico");
-        System.out.println("8. Esvaziar ou Calibrar Todos os Pneus de um Veículo");
-        System.out.println("9. Imprimir Pista de Corrida");
-        System.out.println("10. Imprimir Veículos na Ordem do Array");
-        System.out.println("11. Gravar Veículos no Arquivo");
-        System.out.println("12. Ler Veículos do Arquivo");
-        System.out.println("13. Imprimir Veículos na Ordem do Array");
+        System.out.println("4. Movimentar Veículo Específico");
+        System.out.println("5. Movimentar Veículos por Tipo");
+        System.out.println("6. Movimentar todos os Veículos");
+        System.out.println("7. Imprimir todos os dados de todos os veículos");
+        System.out.println("8. Imprimir dados de Veículos por Tipo");
+        System.out.println("9. Esvaziar/Calibrar Pneu Específico de Veículo Específico");
+        System.out.println("10. Calibrar todos os pneus de veículos por Tipo");
+        System.out.println("11. Esvaziar todos os pneus de veículos por Tipo");
+        System.out.println("12. Imprimir pista de corrida");
+        System.out.println("13. Gravar Veículos em Arquivo");
+        System.out.println("14. Ler Veículos de Arquivo");
+        System.out.println("15. Sair do Aplicativo");
         System.out.println("Digite o número da opção desejada:");
     }
 }

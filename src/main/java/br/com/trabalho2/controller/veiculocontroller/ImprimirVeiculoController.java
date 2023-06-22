@@ -12,7 +12,7 @@ public class ImprimirVeiculoController {
     }
 
     public static void imprimeVeiculoEspecifico(List<Object> veiculos, int id){
-        var veiculo = veiculos.stream().filter(item -> VeiculoMapper.veiculoMapper(item).getId() == id);
+        var veiculo = veiculos.stream().filter(item -> VeiculoMapper.veiculoMapper(item).getId() == id).findFirst().orElse(null);
         Validations.validateExists(veiculo);
         veiculo.toString();
     }
