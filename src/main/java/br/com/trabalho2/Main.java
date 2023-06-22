@@ -24,7 +24,7 @@ public class Main {
             switch (opcao) {
                 case 1: {
                     // Adicionar o veículo ao simulador
-                    simulador.incluirVeiculo();
+                    simulador.incluirVeiculo(); // OK
                     break;
                 }
 
@@ -32,7 +32,7 @@ public class Main {
                     System.out.println("== Remover Veículo ==");
                     System.out.print("Informe o ID do veículo a ser removido: ");
                     int idVeiculo = scanner.nextInt();
-                    simulador.removerVeiculo(idVeiculo);
+                    simulador.removerVeiculo(idVeiculo);// OK
                     break;
                 }
 
@@ -40,14 +40,7 @@ public class Main {
                     System.out.println("== Abastecer Veículo ==");
                     System.out.print("Informe o ID do veículo a ser abastecido: ");
                     int idVeiculo = scanner.nextInt();
-
-//                    Veiculo veiculo = simulador.procuraVeiculo(idVeiculo);
-//
-//                    if (veiculo != null) {
-//                        System.out.print("Informe a quantidade de combustível em litros: ");
-//                        double quantidadeCombustivel = scanner.nextDouble();
-//                        simulador.abastecerVeiculo(veiculo, quantidadeCombustivel);
-//                    }
+                    simulador.abastecerVeiculo(idVeiculo);// OK
                     break;
                 }
 
@@ -57,10 +50,6 @@ public class Main {
                     System.out.print("Informe o ID do veículo a ser movimentado: ");
                     int idVeiculo = scanner.nextInt();
 
-//                    Veiculo veiculo = simulador.procuraVeiculo(idVeiculo);
-//                    if (veiculo != null) {
-//                        simulador.movimentarVeiculo(veiculo);
-//                    }
                     break;
                 }
 
@@ -74,11 +63,7 @@ public class Main {
                     System.out.println("== Imprimir Dados de um Veículo ==");
                     System.out.print("Informe o ID do veículo: ");
                     int idVeiculo = scanner.nextInt();
-
-//                    Veiculo veiculo = simulador.procuraVeiculo(idVeiculo);
-//                    if (veiculo != null) {
-//                        simulador.imprimirDadosVeiculo(veiculo);
-//                    }
+                    simulador.imprimirVeiculo(idVeiculo);
                     break;
                 }
                 case 7: {
@@ -126,7 +111,7 @@ public class Main {
                 }
                 case 10: {   // Imprimir os dados de todos os veículos no simulador
                     System.out.println("== Imprimir Veículos ==");
-                    //simulador.imprimirDadosVeiculo();
+                    simulador.imprimirVeiculos();
                     break;
                 }
                 case 11: {   // Imprimir os dados de todos os veículos no simulador

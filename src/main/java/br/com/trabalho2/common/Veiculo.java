@@ -6,13 +6,9 @@ public abstract class Veiculo {
 
     int id;
     int distanciaPercorrida;
-    Pneu[] rodas;
-    int quantidadeRodas;
-
+    Pneu[] pneus;
+    int quantidadePneus;
     public double valorBase = 500.00;
-    public double combustivel = 0;
-    public double valorIpva = 0;
-
 
     public abstract void mover();
 
@@ -36,19 +32,19 @@ public abstract class Veiculo {
         this.distanciaPercorrida = distanciaPercorrida;
     }
 
-    public Pneu[] getRodas() {
-        return rodas;
+    public Pneu[] getPneus() {
+        return pneus;
     }
 
-    public void setRodas(Pneu[] rodas) {
-        this.rodas = rodas;
+    public void setPneus(Pneu[] pneus) {
+        this.pneus = pneus;
     }
 
-    public int getQuantidadeRodas() {
-        return quantidadeRodas;
+    public int getQuantidadePneus() {
+        return quantidadePneus;
     }
 
-    public void setQuantidadeRodas(int quantidadeRodas) {
-        this.quantidadeRodas = quantidadeRodas;
+    public void setQuantidadePneus(int quantidadePneus) {
+        this.quantidadePneus = quantidadePneus;
     }
 }

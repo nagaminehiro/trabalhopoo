@@ -12,7 +12,7 @@ public class Esportivo extends VeiculoMotorizado implements IPVA {
 
     @Override
     public double calcularIPVA() {
-        return valorIpva = cteEsportivo*super.valorBase;
+        return (cteEsportivo*super.valorBase);
     }
 
     @Override
@@ -23,5 +23,17 @@ public class Esportivo extends VeiculoMotorizado implements IPVA {
     @Override
     public void desenhar() {
 
+    }
+
+    @Override
+    public String toString() {
+        return "Esportivo {" +
+                    "gastoEsportivo: " + gastoEsportivo + "," +
+                    "cteEsportivo: " + cteEsportivo + "," +
+                    "combustivel: " + super.combustivel + "," +
+                    "pneus: " + super.getQuantidadePneus() +
+                    "distanciaPercorrida: " + super.getDistanciaPercorrida() +
+                    "getPneus: " + super.getPneus() +
+                '}';
     }
 }

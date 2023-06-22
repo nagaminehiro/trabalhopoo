@@ -16,4 +16,11 @@ public class Pneu {
     public void setCalibragemPneu(boolean calibragemPneu) {
         this.calibragemPneu = calibragemPneu;
     }
+
+    @Override
+    public String toString() {
+        return "Pneu{" +
+                "calibragemPneu=" + calibragemPneu +
+                '}';
+    }
 }

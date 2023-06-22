@@ -7,11 +7,12 @@ import br.com.trabalho2.util.TipoVeiculo;
 @TipoVeiculo("Motocicleta")
 public class Motocicleta extends VeiculoMotorizado implements IPVA {
 
+
     public double cteMotocicleta = 0.75;
     public double gastoMotocicleta = 0.25;
     @Override
     public double calcularIPVA() {
-        return valorIpva = cteMotocicleta*super.valorBase;
+        return (cteMotocicleta*super.valorBase);
     }
 
     @Override
@@ -23,4 +24,14 @@ public class Motocicleta extends VeiculoMotorizado implements IPVA {
     public void desenhar() {
 
     }
+
+    @Override
+    public String toString() {
+        return "Motocicleta {" +
+                    "cteMotocicleta: " + cteMotocicleta + "," +
+                    "gastoMotocicleta: " + gastoMotocicleta + "," +
+                    "combustivel: " + super.combustivel +
+                '}';
+    }
+
 }

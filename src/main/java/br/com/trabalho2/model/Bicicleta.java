@@ -19,4 +19,11 @@ public class Bicicleta extends Veiculo implements Serializable {
     public void desenhar() {
 
     }
+
+    @Override
+    public String toString() {
+        return "Bicicleta {}";
+    }
+
+
 }
