@@ -57,7 +57,7 @@ public class Simulador {
 
     public void calibrarEsvaziarTodos(String className){
         try{
-            PneusController.calibrarAllPneu(veiculos, className);
+            PneusController.calibrarPneu(veiculos, className);
         }catch (Exception ex){
             System.out.println(ex.getMessage());
         }
@@ -69,6 +69,13 @@ public class Simulador {
             System.out.println(ex.getMessage());
         }
 
+    }
+    public void lerVeiculosArquivo(){
+        try{
+            LerVeiculosArquivoController.lerVeiculosArquivo();
+        }catch (Exception ex){
+            System.out.println(ex.getMessage());
+        }
     }
 
 }

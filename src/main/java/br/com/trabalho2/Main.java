@@ -88,7 +88,7 @@ public class Main {
                     break;
                 }
                 case 10: {// calibrar todos os pneus de veículos por tipo
-                    System.out.println("== Calibrar ou Calibrar todos os Pneus de Veículos por Tipo ==");
+                    System.out.println("== Calibrar ou Esvaziar todos os Pneus de Veículos por Tipo ==");
                     System.out.println("Informe o tipo do veiculo: EX: " + CommonVeiculos.listTipoVeiculo());
                     var ret = scanner.next();
                     do{
@@ -115,7 +115,7 @@ public class Main {
                 }
                 case 13: {   // Ler veículos de arquivo
                     System.out.println("== Ler Veículos de Arquivo ==");
-                    //simulador.lerVeiculosArquivo();
+                    simulador.lerVeiculosArquivo();
                     break;
                 }
                 case 14: {   // Encerrar o programa
@@ -126,7 +126,7 @@ public class Main {
                     System.out.println("Opção inválida. Por favor, escolha uma opção válida.");
                 }
             }
-        } while (opcao != 15);
+        } while (opcao != 14);
 
         // Encerrando o programa
         System.out.println("Encerrando o programa...");
@@ -144,12 +144,11 @@ public class Main {
         System.out.println("7. Imprimir todos os dados de todos os veículos");
         System.out.println("8. Imprimir dados de Veículos por Tipo");
         System.out.println("9. Esvaziar/Calibrar Pneu Específico de Veículo Específico");
-        System.out.println("10. Calibrar todos os pneus de veículos por Tipo");
-        System.out.println("11. Esvaziar todos os pneus de veículos por Tipo");
-        System.out.println("12. Imprimir pista de corrida");
-        System.out.println("13. Gravar Veículos em Arquivo");
-        System.out.println("14. Ler Veículos de Arquivo");
-        System.out.println("15. Sair do Aplicativo");
+        System.out.println("10. Esvaziar/Calibrar todos os pneus de veículos por Tipo");
+        System.out.println("11. Imprimir pista de corrida");
+        System.out.println("12. Gravar Veículos em Arquivo");
+        System.out.println("13. Ler Veículos de Arquivo");
+        System.out.println("14. Sair do Aplicativo");
         System.out.println("Digite o número da opção desejada:");
     }
 }

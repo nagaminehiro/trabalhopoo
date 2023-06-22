@@ -5,6 +5,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class GravarVeiculosArquivoController {
 
@@ -12,7 +13,8 @@ public class GravarVeiculosArquivoController {
         File arquivo = new File("veiculo.dat");
         FileOutputStream fout = new FileOutputStream(arquivo);
         ObjectOutputStream oos = new ObjectOutputStream(fout);
-        oos.writeObject(veiculos);
+        var v = veiculos.stream().map(item -> item.toString()+"\n").collect(Collectors.joining());
+        oos.writeObject(v);
         oos.flush();
         oos.close();
         fout.close();

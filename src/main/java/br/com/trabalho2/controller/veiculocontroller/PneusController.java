@@ -1,13 +1,11 @@
 package br.com.trabalho2.controller.veiculocontroller;
 
 
-import br.com.trabalho2.common.Veiculo;
 import br.com.trabalho2.exception.RunException;
 import br.com.trabalho2.model.Pneu;
 import br.com.trabalho2.util.CommonVeiculos;
 import br.com.trabalho2.util.VeiculoMapper;
 
-import java.lang.reflect.Type;
 import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
@@ -29,21 +27,21 @@ public class PneusController {
                 System.out.println("Legenda: " + CommonVeiculos.listTipoPneus());
                 var pneu = scan.next();
 
-                veiculo.getPneus().stream().filter(item -> item.getIdentificaoPneu() == pneu).forEach(item -> calibrarPneu(item));
+                veiculo.getPneus().stream().filter(item -> item.getIdentificaoPneu().equals(pneu)).forEach(item -> calibrarPneu(item));
                 break;
             case 2:
                 System.out.println("Escolha o pneu que deseja calibrar! opçoes: " + veiculo.getPneus().stream().map(item -> " " + item.getIdentificaoPneu()).collect(Collectors.joining()));
                 System.out.println("Legenda: " + CommonVeiculos.listTipoPneus());
                 pneu = scan.next();
 
-                veiculo.getPneus().stream().filter(item -> item.getIdentificaoPneu() == pneu).forEach(item -> esvaziarPneu(item));
+                veiculo.getPneus().stream().filter(item -> item.getIdentificaoPneu().equals(pneu)).forEach(item -> esvaziarPneu(item));
                 break;
             default: throw new RunException("Opção inválida");
         }
         veiculoList.add(veiculo);
     }
 
-    public static void calibrarAllPneu(List<Object> veiculoList, String className){
+    public static void calibrarPneu(List<Object> veiculoList, String className){
 
         Scanner scan = new Scanner(System.in);
         System.out.println("Escolha uma opção");
