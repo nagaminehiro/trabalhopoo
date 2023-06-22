@@ -8,7 +8,7 @@ import br.com.trabalho2.util.VeiculoMapper;
 @TipoVeiculo("Motocicleta")
 public class Motocicleta extends VeiculoMotorizado implements IPVA {
 
-
+    public int cteBlM = 3;
     public double cteMotocicleta = 0.75;
     public double gastoMotocicleta = 0.25;
     @Override

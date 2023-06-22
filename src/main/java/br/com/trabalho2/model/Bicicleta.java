@@ -10,6 +10,7 @@ import java.io.Serializable;
 @TipoVeiculo("Bicicleta")
 public class Bicicleta extends Veiculo implements Serializable {
 
+    public int cteBlB = 2;
 
     @Override
     public void mover() {

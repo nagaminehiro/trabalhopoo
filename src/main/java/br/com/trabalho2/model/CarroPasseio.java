@@ -10,6 +10,7 @@ public class CarroPasseio extends VeiculoMotorizado implements IPVA {
 
     public double ctePasseio = 1.3;
     public double gastoPasseio = 0.75;
+    public int cteBlP = 5;
 
     @Override
     public double calcularIPVA() {

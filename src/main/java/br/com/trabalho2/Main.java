@@ -51,6 +51,7 @@ public class Main {
                     System.out.println("== Movimentar Veículo Específico ==");
                     System.out.print("Informe o ID do veículo a ser movimentado: ");
                     int idVeiculo = scanner.nextInt();
+                    simulador.movimentarVeiculoEspecifico();
 
                     break;
                 }
@@ -58,7 +59,7 @@ public class Main {
                 case 5: {
                     // Movimentar veículos por tipo
                     System.out.println("== Movimentar Veículos por tipo ==");
-                    //simulador.movimentarTodosVeiculos();
+                    simulador.movimentarVeiculosPorTipo();
                     break;
                 }
                 case 6: {// Movimentar todos os veículos
@@ -69,7 +70,7 @@ public class Main {
 
                 case 7: {   // imprimir todos os dados de todos os veículos
                     System.out.println("== Imprimir Todos os dados de todos os Veículos ==");
-                    simulador.imprimirVeiculos();
+                    simulador.imprimirVeiculos();//ok
                     break;
                 }
                 case 8: {   // imprimir dados de veículos por tipo
@@ -77,7 +78,7 @@ public class Main {
                     System.out.print("Informe o ID do veículo: ");
                     int idVeiculo = scanner.nextInt();
                     simulador.imprimirVeiculo(idVeiculo);
-                    break;
+                    break;//ok
                 }
                 case 9: {
                     // Esvaziar ou calibrar um pneu específico de um veículo
@@ -85,9 +86,9 @@ public class Main {
                     System.out.print("Informe o ID do veículo: ");
                     int idVeiculo = scanner.nextInt();
                     simulador.calibrarEsvaziarPneuEspecifico(idVeiculo);
-                    break;
+                    break;//ok
                 }
-                case 10: {// calibrar todos os pneus de veículos por tipo
+                case 10: {// Calibrar ou Esvaziar todos os pneus de veículos por tipo
                     System.out.println("== Calibrar ou Esvaziar todos os Pneus de Veículos por Tipo ==");
                     System.out.println("Informe o tipo do veiculo: EX: " + CommonVeiculos.listTipoVeiculo());
                     var ret = scanner.next();
@@ -100,7 +101,7 @@ public class Main {
 
 
                     simulador.calibrarEsvaziarTodos(CommonVeiculos.getClassName(ret));
-                    break;
+                    break;//ok
                 }
                 case 11: {
                     // Imprimir a pista de corrida do simulador
@@ -111,16 +112,16 @@ public class Main {
                 case 12: {   // Gravar veículos em arquivo
                     System.out.println("== Gravar Veículos em Arquivo ==");
                     simulador.gravarVeiculosArquivo();
-                    break;
+                    break;//ok
                 }
                 case 13: {   // Ler veículos de arquivo
                     System.out.println("== Ler Veículos de Arquivo ==");
                     simulador.lerVeiculosArquivo();
-                    break;
+                    break;//ok
                 }
                 case 14: {   // Encerrar o programa
                     System.out.println("Encerrando o programa...");
-                    break;
+                    break;//ok
                 }
                 default: {   // Opção inválida
                     System.out.println("Opção inválida. Por favor, escolha uma opção válida.");

@@ -10,6 +10,7 @@ import java.util.Arrays;
 @TipoVeiculo("Carro Esportivo")
 public class Esportivo extends VeiculoMotorizado implements IPVA {
 
+    public int cteBlE = 10;
     public double gastoEsportivo = 2.3;
     public double cteEsportivo = 3.15;
 

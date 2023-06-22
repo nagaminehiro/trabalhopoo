@@ -77,5 +77,26 @@ public class Simulador {
             System.out.println(ex.getMessage());
         }
     }
+    public void movimentarVeiculoEspecifico(){
+        try{
+            MovimentarVeiculoController.movimentarVeiculoEspecifico();
+        }catch (Exception ex){
+            System.out.println(ex.getMessage());
+        }
+    }
+    public void movimentarVeiculosPorTipo() {
+        try {
+            MovimentarVeiculoController.movimentarVeiculosPorTipo();
+        }catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+    public void movimentarTodoosVeiculos() {
+        try {
+            MovimentarVeiculoController.movimentarTodosVeiculos();
+        }catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
 
 }
