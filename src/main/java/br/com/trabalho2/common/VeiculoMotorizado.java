@@ -1,12 +1,23 @@
 package br.com.trabalho2.common;
 
 
+import br.com.trabalho2.model.Pneu;
+
+import java.util.List;
+
 public abstract class VeiculoMotorizado extends Veiculo {
     private double combustivel = 2.25;
     private double gastoPasseio = 0.75;
     private double gastoEsportivo = 2.3;
     private double gastoMotocicleta = 0.25;
     private float valorIPVA = 0;
+
+    public VeiculoMotorizado(int id, int distanciaPercorrida, List<Pneu> pneus, int quantidadePneus) {
+        this.setId(id);
+        this.setDistanciaPercorrida(distanciaPercorrida);
+        this.setPneus(pneus);
+        this.setQuantidadePneus(quantidadePneus);
+    }
 
     public double getGastoPasseio() {
         return gastoPasseio;

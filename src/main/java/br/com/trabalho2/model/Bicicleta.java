@@ -1,6 +1,5 @@
 package br.com.trabalho2.model;
 
-import br.com.trabalho1.veiculo.Pneu;
 import br.com.trabalho2.common.Veiculo;
 import br.com.trabalho2.util.TipoVeiculo;
 import br.com.trabalho2.util.VeiculoMapper;
@@ -11,6 +10,13 @@ import java.io.Serializable;
 public class Bicicleta extends Veiculo implements Serializable {
 
     public int cteBlB = 2;
+
+    public Bicicleta() {
+        this.setId(getId());
+        this.setDistanciaPercorrida(getDistanciaPercorrida());
+        this.setPneus(getPneus());
+        this.setQuantidadePneus(getQuantidadePneus());
+    }
 
     @Override
     public void mover() {

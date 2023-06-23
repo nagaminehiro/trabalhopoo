@@ -1,6 +1,8 @@
+/*
 package br.com.trabalho2.controller.veiculocontroller;
 
 import br.com.trabalho2.common.VeiculoMotorizado;
+import br.com.trabalho2.controller.Simulador;
 import br.com.trabalho2.model.*;
 import br.com.trabalho2.util.CommonVeiculos;
 
@@ -10,7 +12,7 @@ public class IncluirVeiculoController {
 
     public static void incluirVeiculo(List<Object> veiculoList){
         Scanner scanner = new Scanner(System.in);
-        if(veiculoList.size() < 20){
+        if(veiculoList.size() < Simulador.qtdVeiculos){
             Random random = new Random();
             int id = random.nextInt(1000);
             boolean ipvaPago = random.nextBoolean();
@@ -70,3 +72,4 @@ public class IncluirVeiculoController {
         };
     }
 }
+*/

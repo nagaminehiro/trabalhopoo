@@ -5,14 +5,14 @@ import br.com.trabalho2.common.VeiculoMotorizado;
 import br.com.trabalho2.util.TipoVeiculo;
 import br.com.trabalho2.util.VeiculoMapper;
 
-import java.util.Arrays;
-
 @TipoVeiculo("Carro Esportivo")
 public class Esportivo extends VeiculoMotorizado implements IPVA {
 
     public int cteBlE = 10;
 
-
+    public Esportivo() {
+        super(getId(), getDistanciaPercorrida(), getPneus(), getQuantidadePneus());
+    }
 
 
     @Override

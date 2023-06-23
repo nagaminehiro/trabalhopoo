@@ -12,6 +12,10 @@ public class CarroPasseio extends VeiculoMotorizado implements IPVA {
 
     public int cteBlP = 5;
 
+    public CarroPasseio() {
+        super(getId(), getDistanciaPercorrida(), getPneus(), getQuantidadePneus());
+    }
+
 
     @Override
     public void mover() {

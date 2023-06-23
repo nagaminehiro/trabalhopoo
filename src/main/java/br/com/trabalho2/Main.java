@@ -2,16 +2,21 @@ package br.com.trabalho2;
 
 
 
+import br.com.trabalho2.common.Veiculo;
 import br.com.trabalho2.controller.Simulador;
 import br.com.trabalho2.util.CommonVeiculos;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
 
 
+    private static List<Object> veiculo;
+
     public static void main(String[] args) {
+        
         Scanner scanner = new Scanner(System.in);
         int opcao;
 
@@ -26,7 +31,7 @@ public class Main {
                 case 1: {
                     // Adicionar o veículo ao simulador
                     System.out.println("== Incluir Veículo ==");
-                    simulador.incluirVeiculo(); // OK
+                    simulador.incluirVeiculo(veiculo); // OK
                     break;
                 }
 

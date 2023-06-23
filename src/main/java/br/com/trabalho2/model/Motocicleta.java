@@ -10,6 +10,9 @@ public class Motocicleta extends VeiculoMotorizado implements IPVA {
 
     public int cteBlM = 3;
 
+    public Motocicleta() {
+        super(getId(), getDistanciaPercorrida(), getPneus(), getQuantidadePneus());
+    }
 
 
     @Override

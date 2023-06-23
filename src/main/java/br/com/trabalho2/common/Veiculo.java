@@ -5,13 +5,16 @@ import br.com.trabalho2.model.Pneu;
 import java.util.List;
 
 public abstract class Veiculo {
-
-    private int id;
-    private int distanciaPercorrida;
-    private List<Pneu> pneus;
-    private int quantidadePneus;
-
-
+    private static int id;
+    private static int distanciaPercorrida;
+    private static List<Pneu> pneus;
+    private static int quantidadePneus;
+    public Veiculo() {
+        this.id = id;
+        this.distanciaPercorrida = distanciaPercorrida;
+        this.pneus = pneus;
+        this.quantidadePneus = quantidadePneus;
+    }
     public abstract void mover();
 
     public abstract void desenhar();
