@@ -6,17 +6,17 @@ import java.util.List;
 
 public abstract class Veiculo {
 
-    private int id;
-    private int distanciaPercorrida;
-    private List<Pneu> pneus;
-    private int quantidadePneus;
-
+    int id;
+    int distanciaPercorrida;
+    List<Pneu> pneus;
+    int quantidadePneus;
+    public double valorBase = 500.00;
 
     public abstract void mover();
 
     public abstract void desenhar();
 
-    public void calibrarPneu(int pneu){}
+    public void calibraPneu(int pneu){}
 
     public int getId() {
         return id;
@@ -48,15 +48,5 @@ public abstract class Veiculo {
 
     public void setQuantidadePneus(int quantidadePneus) {
         this.quantidadePneus = quantidadePneus;
-    }
-
-    @Override
-    public String toString() {
-        return "Veiculo{" +
-                "id=" + id +
-                ", distanciaPercorrida=" + distanciaPercorrida +
-                ", pneus=" + pneus +
-                ", quantidadePneus=" + quantidadePneus +
-                '}';
     }
 }

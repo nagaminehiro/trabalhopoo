@@ -11,9 +11,13 @@ import java.util.Arrays;
 public class Esportivo extends VeiculoMotorizado implements IPVA {
 
     public int cteBlE = 10;
+    public double gastoEsportivo = 2.3;
+    public double cteEsportivo = 3.15;
 
-
-
+    @Override
+    public double calcularIPVA() {
+        return (cteEsportivo*super.valorBase);
+    }
 
     @Override
     public void mover() {
@@ -29,9 +33,9 @@ public class Esportivo extends VeiculoMotorizado implements IPVA {
     public String toString() {
         return "Esportivo { " +
                     "id: " + super.getId() + ", " +
-                    "gastoEsportivo: " + super.getGastoEsportivo() + ", " +
+                    "gastoEsportivo: " + gastoEsportivo + ", " +
                     "cteEsportivo: " + cteEsportivo + ", " +
-                    "combustivel: " + super.getCombustivel() + ", " +
+                    "combustivel: " + super.combustivel + ", " +
                     "pneus: " + super.getQuantidadePneus() + ", " +
                     "distanciaPercorrida: " + super.getDistanciaPercorrida() + ", " +
                     "getPneus: " + VeiculoMapper.printPneus(super.getPneus()) +

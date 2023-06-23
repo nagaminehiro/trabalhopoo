@@ -2,7 +2,7 @@ package br.com.trabalho2.model;
 
 public class Pneu {
 
-    private boolean calibragemPneu;
+    boolean calibragemPneu;
     String identificaoPneu;
 
 
@@ -28,8 +28,6 @@ public class Pneu {
     public void setCalibragemPneu(boolean calibragemPneu) {
         this.calibragemPneu = calibragemPneu;
     }
-
-
 
     @Override
     public String toString() {
